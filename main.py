@@ -45,7 +45,7 @@ def run_menu():
 
         # render menu
         screen.fill((30, 30, 30))
-        title = font.render("Caleb-Tetris", True, (255, 255, 255))
+        title = font.render("Caleb - Tetris", True, (255, 255, 255))
         screen.blit(title, (screen_width // 2 - title.get_width() // 2, 80))
 
         options = ["Start Game", f"Start Level: {level}", "Quit"]
@@ -56,7 +56,7 @@ def run_menu():
             screen.blit(txt, (screen_width // 2 - txt.get_width() // 2, 200 + i * 50))
 
         # build strings
-        to_show = scores[:8]
+        to_show = scores[:5]
         entries = []
         for i, entry in enumerate(to_show):
             name = (entry.get("name") or "").strip()[:12]

@@ -1,10 +1,10 @@
 # TETRIS
 
-This is my final project for CS 121
+This is my final project for CS 121, a recreation of the classic puzzle game Tetris
 
 ## Project Overview
 
-This project is a Python implementation of the classic **Tetris** game. It allows users to play a fully functional version of Tetris directly from the terminal or window (depending on your implementation). The game includes real-time piece movement, rotation, row clearing, scoring, and high‑score tracking.
+This project is a Python implementation of the classic Tetris game. It allows users to play a fully functional version of Tetris directly from the terminal or window (depending on your implementation). The game includes real-time piece movement, rotation, row clearing, scoring, and high‑score tracking.
 
 ## Features
 
@@ -15,7 +15,6 @@ This project is a Python implementation of the classic **Tetris** game. It allow
 * Row‑clearing with score updates based on level
 * High‑score saving and loading via CSV file
 * Multi-file code storing
-
 
 ## Installation
 
@@ -63,14 +62,24 @@ This project is a Python implementation of the classic **Tetris** game. It allow
 
 ```
 project/
-├── main.py          # Launches the game
+├── main.py          # Launches the menu
 ├── game.py          # Handles gameplay mechanics
 ├── functions.py     # Helper functions used across the game
 ├── high_scores.csv  # Stores previous scores
 └── README.md        # Project documentation
 ```
 
+## Items to add
+
+* Piece count statstics 
+* Incremental speed ups instead of per level
+* Soft drop and Hard Drop points
+* Next box showing the next piece
+
+
 ## Credits
 
-This project was developed with the assistance of **GitHub Copilot** and **ChatGPT** for code suggestions and documentation support.
+This project was developed with the assistance of **GitHub Copilot** and **ChatGPT** for code suggestions and documentation support, along with comentation and desgin. 
+For getting the user's name, I found help in this post on stack overflow, https://stackoverflow.com/questions/46390231/how-can-i-create-a-text-input-box-with-pygame, and drew inspiration from that desgin.
+Inspiration for this project is from the game Tetris made by Alexey Pajitnov, spesificlly NES Tetris, also know as "Classic Tetris".
 

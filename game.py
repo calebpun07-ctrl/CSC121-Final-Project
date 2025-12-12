@@ -11,7 +11,7 @@ def tetris(screen, screen_width, screen_height, clock, set_level=1):
     """board initals"""
     running = True
     cols, rows = 10, 20# board dimensions (used for movement bounds)
-    level = set_level
+    level = 0
     cell_size, grid_x, grid_y, grid_rects = create_grid(screen_width, screen_height, cols=cols, rows=rows, margin=0) # create the grid that fits the screen: 10 cols x 20 rows
     grid_line_color = (200, 200, 200)
     fall_acc = 0.0
@@ -28,7 +28,7 @@ def tetris(screen, screen_width, screen_height, clock, set_level=1):
     piece_rects = piece_blocks_to_rects(current_piece["blocks"], cell_size, grid_x, grid_y)
 
     while running:
-        level = (level -1) + (total_lines+10)//10
+        level = set_level+((total_lines)//10)
         for event in pygame.event.get():
             if event.type == pygame.QUIT: #found this online in most everything? TODO cite this
                 running = False
@@ -77,6 +77,15 @@ def tetris(screen, screen_width, screen_height, clock, set_level=1):
                                 total_lines += lines_cleared
                             current_piece = generate_random_piece()
                             if not can_move(current_piece["blocks"], cols, rows, occupied):
+                                # Prompt for player name and save score
+                                try:
+                                    player_name = get_user_input(screen, font, prompt="Game Over! Enter your name:", max_len=12)
+                                except Exception:
+                                    player_name = "PLAYER"
+                                try:
+                                    add_score(player_name, score, total_lines, level)
+                                except Exception as e:
+                                    print("Failed to save score:", e)
                                 running = False
                             fall_acc = 0.0
                             break

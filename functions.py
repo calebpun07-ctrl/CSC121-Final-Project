@@ -50,6 +50,7 @@ ROTATION_STATES = {
     ],
 }
 HS_PATH = Path("high_scores.csv")
+
 def generate_random_piece():
         """Generate a random Tetris piece positioned at spawn location.
 
@@ -307,7 +308,6 @@ def load_scores(path: Path = HS_PATH):
             })
     return scores
 
-
 def save_scores(scores, path: Path = HS_PATH):
     """Save list of score dicts to CSV. Each item should have keys
     'name','score','lines','level'."""
@@ -354,7 +354,6 @@ def get_user_input(screen, font, prompt="Enter name:", max_len: int = 10):
     Uses `get_player_name` which provides a blocking pygame text-input UI.
     """
     return get_player_name(screen, font, prompt=prompt, max_len=max_len)
-
 
 def get_player_name(screen, font, prompt="Enter name:", max_len=10):
     """Block until player presses Enter. Returns entered name (str)."""
