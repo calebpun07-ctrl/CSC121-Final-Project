@@ -77,7 +77,6 @@ def tetris(screen, screen_width, screen_height, clock, set_level=1):
                                 total_lines += lines_cleared
                             current_piece = generate_random_piece()
                             if not can_move(current_piece["blocks"], cols, rows, occupied):
-                                print("GAME OVER!")
                                 running = False
                             fall_acc = 0.0
                             break
@@ -89,7 +88,6 @@ def tetris(screen, screen_width, screen_height, clock, set_level=1):
                 elif event.key == pygame.K_RIGHT or event.key == pygame.K_d: 
                     keys_pressed["right"] = False
                     start_das_value = 0
-        print(keys_pressed, start_das_value)
         #DAS
         if keys_pressed["left"] or keys_pressed["right"]:
             start_das_value += 1
