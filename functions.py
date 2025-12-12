@@ -8,9 +8,9 @@ from pathlib import Path
 ROTATION_STATES = {
     "I": [
         [(0, 0), (1, 0), (2, 0), (3, 0)],  # horizontal
-        [(0, 0), (0, 1), (0, 2), (0, 3)],  # vertical
+        [(1, 0), (1, 1), (1, 2), (1, 3)],  # vertical
         [(0, 0), (1, 0), (2, 0), (3, 0)],  # horizontal (repeat)
-        [(0, 0), (0, 1), (0, 2), (0, 3)],  # vertical (repeat)
+        [(1, 0), (1, 1), (1, 2), (1, 3)],  # vertical (repeat)
     ],
     "O": [
         [(0, 0), (1, 0), (0, 1), (1, 1)],  # square (same in all rotations)
